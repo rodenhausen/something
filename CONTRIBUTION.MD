@@ -37,11 +37,9 @@ There are components that will
 - markup: defines what the markup process of phenology is like
 - transform: transforms the phenology data from input to output schema
 
+Even though the technique used to parse and transform the type of data may differ, at this level this is opague and thus this basic process is very much the same with the other types of descriptions. 
 
-
-https://github.com/biosemantics/charaparser/tree/master/src/main/java/edu/arizona/biosemantics/semanticmarkup/markupelement/phenology
-
-
+Morphological descriptions also follow the same pattern of processing. However, given the complexity of morphological text the transformation process is more sophisticated. The transformation process of description relies on a learn and parse portion. Learn will use unsupervised learning to learn the terminology used in the descriptions. The parse/markup portion will utilize a pipeline of NLP tools to normalize, tokenize, pos tag, sentence syntax first parse the descriptions. Then a set of chunkers will, based on the results of the NLP tool pipeline chunk sentence tokens logically belonging together. Description extracts will then use these chunks to build the data according to the output schema, i.e. create Characters and Relations.
 
 
 
