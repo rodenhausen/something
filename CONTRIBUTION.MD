@@ -25,6 +25,23 @@ ETCMarkupRun delegates a IMarkupCreator (e.g. a MarkupChain) to create the marku
 
 These can be found based on {DescriptionType} in the packages here: https://github.com/biosemantics/charaparser/tree/master/src/main/java/edu/arizona/biosemantics/semanticmarkup/markupelement
 
+e.g. for type morphology (still called description from a time when there was only one type of description: morphology)
+https://github.com/biosemantics/charaparser/tree/master/src/main/java/edu/arizona/biosemantics/semanticmarkup/markupelement/description
+for type phenology:
+https://github.com/biosemantics/charaparser/tree/master/src/main/java/edu/arizona/biosemantics/semanticmarkup/markupelement/phenology
+
+Looking closer at phenology:
+There are components that will 
+- io: provide Input/Output capabilities of phenology information from the data files
+- model: the data model of phenology data retrieved from files and to be written to files after the markup process is complete
+- markup: defines what the markup process of phenology is like
+- transform: transforms the phenology data from input to output schema
+
+
+
+https://github.com/biosemantics/charaparser/tree/master/src/main/java/edu/arizona/biosemantics/semanticmarkup/markupelement/phenology
+
+
 
 
 
