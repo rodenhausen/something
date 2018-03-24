@@ -1,10 +1,18 @@
 # Charaparser Architecture
 The Charaparser framework allows for different types of executions and is highly configurable to the a very detailed processing level. To configure Charaparser for a specific execution the dependency injection framework Guice is utilized. On a high level, it can for example be executed to markup descriptions, or to evaluate created markup. On another level it may for example be configured to markup morphological descriptions or a range of other description types such as habitat, elevation, phenology, ecology and distribution. Also the strategies used to markup any of these types can be varied, all the way to detailed information such as which measurement units are supported (cm, dm, m, etc.). 
 
-The following diagram illustrates the utilization of the injection framework. AbstractModule is a Guice class utilized to create the injection bindings. The hierarchy inheriting AbstractModule merely layers configuration options of CharaParser by detail level of parameters and finally taxon groups. A command line interface (CLI) entry point may parse command line options and parameters to update the configuration for the run according to users inputs. Eventually a IRun will be created to run the desired configured execution.
+The following diagram illustrates the utilization of the injection framework. AbstractModule is a Guice class utilized to create the injection bindings. The hierarchy inheriting AbstractModule merely layers configuration options of CharaParser by detail level of parameters and finally taxon groups. A command line interface (CLI) entry point may parse command line options and parameters to update the configuration for the run according to users inputs. Eventually a IRun will be created to execute the desired run configuration.
+
 ![Run and Guice Configuration][Run]
 
+ETCLearnRun is one IRun example that is used for illustration in the following. For the markup of morphological descriptions it is required to learn the terminology used in the description. This is achieved by ETCLearnRun. To achieve this it will learn using OTOLearner. OTOLearner reads the descriptions, e.g. from XML files and returns the model class DescriptionsFilesList. It will then retrieve a glossary for the taxon group configured from OTO and subsequently initialize an in memory glossary with the retrieved data. An instance of ITerminologyLearner will proceed with the actual learning of terminology from the DescriptionsFileList. Finally OTOLearner will send the the collection of terminology found for review and corrective relabeling to OTO2, the term categorization application.
+
+![ETCLearnRun][ETCLearnRun]
+
+
 [Run]: http://biosemantics.github.io/charaparser/Run.png "Run and Guice Configuration"
+[ETCLearnRun]: http://biosemantics.github.io/charaparser/ETCLearnRun.png "ETCLearnRun"
+[ETCMarkupRun]: http://biosemantics.github.io/charaparser/ETCMarkupRun.png "ETCMarkupRun"
 
 
 
