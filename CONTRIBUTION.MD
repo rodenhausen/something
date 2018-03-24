@@ -1,5 +1,12 @@
 # Charaparser Architecture
-The Charaparser framework is highly configurable and allows for different types of executions.
+The Charaparser framework is highly configurable and allows for different types of executions. To configure Charaparser for a specific execution the dependency injection framework Guice is utilized. The following diagram 
+![Run and Guice Configuration][Run]
+
+[Run]: http://biosemantics.github.io/charaparser/Run.png "Run and Guice Configuration"
+
+
+
+The different types of executions manifest in different entry points, e.g. 
 
 Different types of executions and thus different types of entry points.
 parse/eval/..
