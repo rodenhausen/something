@@ -9,10 +9,26 @@ ETCLearnRun is one IRun example that is used for illustration in the following. 
 
 ![ETCLearnRun][ETCLearnRun]
 
+ETCLearnRun is usually only run in conjunction with ETCMarkupRun, another IRun option. ETCMarkupRun utilizes a MarkupChain that trigger the creation of markup for a configured set of description types. 
+
+![ETCMarkupRun][ETCMarkupRun]
+
+The currently available IMarkupCreator, on a high level, all very much behave the same way. They read the type of description which they are supposed to transform. They will do the transformation and they will write the transformed description back to the source, e.g. an XML file. To illustrate this take a look at the DescriptionMarkupCreator (Markup Creator for descriptions of type morphologye). DescriptionMarkupCreator will loop over a set of configured IDescriptionTransformer to create the transformed morphological description. For example, a first transformer may extract create biological entities and their characters from a piece of text, while a subsequent transformer may map biological entities found to IRIs in ontologies available.
+
+![DescriptionMarkupCreator][DescriptionMarkupCreator]
+
+To dive deeper into this, let's take a look at the IDescriptionTransformer that is MarkupDescriptionTreatmentTransformer.
+
+![MarkupDescriptionTreatmentTransformer][MarkupDescriptionTreatmentTransformer]
+
 
 [Run]: http://biosemantics.github.io/charaparser/Run.png "Run and Guice Configuration"
 [ETCLearnRun]: http://biosemantics.github.io/charaparser/ETCLearnRun.png "ETCLearnRun"
 [ETCMarkupRun]: http://biosemantics.github.io/charaparser/ETCMarkupRun.png "ETCMarkupRun"
+[DescriptionMarkupCreator]: http://biosemantics.github.io/charaparser/DescriptionMarkupCreator.png "DescriptionMarkupCreator"
+[MarkupDescriptionTreatmentTransformer]: http://biosemantics.github.io/charaparser/MarkupDescriptionTreatmentTransformer.png "MarkupDescriptionTreatmentTransformer"
+
+
 
 
 
