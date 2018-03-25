@@ -4,7 +4,7 @@ The Charaparser framework allows for different types of executions and is highly
 The following diagram illustrates the utilization of the injection framework. AbstractModule is a Guice class utilized to create the injection bindings. The hierarchy inheriting AbstractModule merely layers configuration options of CharaParser by detail level (i.e. BaseConfig contains parameters that likely do not vary, while RunConfig contains parameters that frequently change between runs) and finally taxon groups. A command line interface (CLI) entry point may parse command line options and parameters to update the configuration for the run according to users inputs. Eventually a IRun will be created to execute the desired run configuration.
 
 ![Run and Guice Configuration][Run]
-![ETCLearnRun][ETCLearnRun]
+![ETCLearnMain][ETCLearnMain]
 
 ETCLearnRun is one IRun example that is used for illustration in the following. For the markup of morphological descriptions it is required to learn the terminology used in the description. This is achieved by ETCLearnRun. To achieve this it will learn using OTOLearner. OTOLearner reads the descriptions, e.g. from XML files and returns the model class DescriptionsFilesList. It will then retrieve a glossary for the taxon group configured from OTO and subsequently initialize an in memory glossary with the retrieved data. An instance of ITerminologyLearner will proceed with the actual learning of terminology from the DescriptionsFileList. Finally OTOLearner will send the the collection of terminology found for review and corrective relabeling to OTO2, the term categorization application.
 
