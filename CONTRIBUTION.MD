@@ -23,8 +23,8 @@ To dive deeper into this, let's take a look at the IDescriptionTransformer that 
 
 
 ![DescriptionExtractorRun][DescriptionExtractorRun]
-![SomeDescriptionExtractor][SomeDescriptionExtractor]
 ![SentenceChunkerRun][SentenceChunkerRun]
+![SomeDescriptionExtractor][SomeDescriptionExtractor]
 
 
 
