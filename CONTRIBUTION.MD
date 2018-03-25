@@ -35,7 +35,8 @@ To dive deeper into this, let's take a look at the IDescriptionTransformer that 
 [DescriptionMarkupCreator]: http://biosemantics.github.io/charaparser/DescriptionMarkupCreator.png "DescriptionMarkupCreator"
 [MarkupDescriptionTreatmentTransformer]: http://biosemantics.github.io/charaparser/MarkupDescriptionTreatmentTransformer.png "MarkupDescriptionTreatmentTransformer"
 [DescriptionExtractorRun]: http://biosemantics.github.io/charaparser/DescriptionExtractorRun.png "DescriptionExtractorRun"
-[SomeDescriptionExtractor]: http://biosemantics.github.io/charaparser/SomeDescriptionExtractor.png "SomeDescriptionExtractor"[SentenceChunkerRun]: http://biosemantics.github.io/charaparser/SentenceChunkerRun.png "SentenceChunkerRun"
+[SomeDescriptionExtractor]: http://biosemantics.github.io/charaparser/SomeDescriptionExtractor.png "SomeDescriptionExtractor"
+[SentenceChunkerRun]: http://biosemantics.github.io/charaparser/SentenceChunkerRun.png "SentenceChunkerRun"
 
 
 
