@@ -17,9 +17,11 @@ The currently available IMarkupCreator, on a high level, all very much behave th
 
 ![DescriptionMarkupCreator][DescriptionMarkupCreator]
 
-To dive deeper into this, let's take a look at the IDescriptionTransformer that is MarkupDescriptionTreatmentTransformer.
+To dive deeper into this, let's take a look at the IDescriptionTransformer that is MarkupDescriptionTreatmentTransformer. This transformer will retrieve the glossary for the specific taxon group from OTO and additionally retrieve the reviewed term categorizations from the learn step discussed previously. It initializes an in-memory glossary from these two data sources and learn using an instance of DatabaseInputNoLearner. As the name suggested this is not actually learning terminology but rather initializing a required database. Finally for all descriptions to be transformed it will extract the description markup using a DescriptionExtractorRun.
 
 ![MarkupDescriptionTreatmentTransformer][MarkupDescriptionTreatmentTransformer]
+
+
 
 
 [Run]: http://biosemantics.github.io/charaparser/Run.png "Run and Guice Configuration"
@@ -27,6 +29,12 @@ To dive deeper into this, let's take a look at the IDescriptionTransformer that 
 [ETCMarkupRun]: http://biosemantics.github.io/charaparser/ETCMarkupRun.png "ETCMarkupRun"
 [DescriptionMarkupCreator]: http://biosemantics.github.io/charaparser/DescriptionMarkupCreator.png "DescriptionMarkupCreator"
 [MarkupDescriptionTreatmentTransformer]: http://biosemantics.github.io/charaparser/MarkupDescriptionTreatmentTransformer.png "MarkupDescriptionTreatmentTransformer"
+[DescriptionExtractorRun]: http://biosemantics.github.io/charaparser/DescriptionExtractorRun.png "DescriptionExtractorRun"
+[SomeDescriptionExtractor]: http://biosemantics.github.io/charaparser/SomeDescriptionExtractor.png "SomeDescriptionExtractor"[SentenceChunkerRun]: http://biosemantics.github.io/charaparser/SentenceChunkerRun.png "SentenceChunkerRun"
+
+
+
+
 
 
 
