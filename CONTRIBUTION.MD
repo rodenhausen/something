@@ -18,13 +18,22 @@ The currently available IMarkupCreator, on a high level, all very much behave th
 
 ![DescriptionMarkupCreator][DescriptionMarkupCreator]
 
+The following illustrates the architecture specific to morphological descriptions. It is considerably simplified for any of the other description types. 
+
 To dive deeper into this, let's take a look at the IDescriptionTransformer that is MarkupDescriptionTreatmentTransformer. This transformer will retrieve the glossary for the specific taxon group from OTO and additionally retrieve the reviewed term categorizations from the learn step discussed previously. It initializes an in-memory glossary from these two data sources and learn using an instance of DatabaseInputNoLearner. As the name suggested this is not actually learning terminology but rather initializing a required database. Finally for all descriptions to be transformed it will extract the description markup using a DescriptionExtractorRun.
 
 ![MarkupDescriptionTreatmentTransformer][MarkupDescriptionTreatmentTransformer]
 
+DescriptionExtractorRun loops over all sentences and chunks each one of them resulting in a ChunkCollector. Once complete, it extracts the marked up description using all the ChunkCollectors.
 
 ![DescriptionExtractorRun][DescriptionExtractorRun]
+
+To do the chunking of a sentence, in detail, SentenceChunkerRun normalizes, tokenizes, tags, and parses the sentence. In the last step a ChunkerChain chunks the sentence resulting in a ChunkCollector.
+
 ![SentenceChunkerRun][SentenceChunkerRun]
+
+To do extract the mraked up description using all the ChunkCollectors of a single description, in detail, the SomeDescriptionExtractor first creates a ProcessingContext. It will iterate all ChunkCollectors, each of them corresponding to one of the sentences in the description. It will initialize the ProcessingContext for the new sentence by resetting and setting the ChunkCollector. It will get and loop over all the chunks of the sentence, obtain the IChunkProcessor adequate for the ChunkType at hand and process it resulting in a set of Elements. This concludes the markup process of morphological descriptions on a high level.
+
 ![SomeDescriptionExtractor][SomeDescriptionExtractor]
 
 
