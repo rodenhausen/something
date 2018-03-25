@@ -1,7 +1,7 @@
 # Charaparser Architecture Overview
 
 ## Table of contents
-   * [Introduction](#Introduction)
+   * [Introduction](#introduction)
    * [Entry-point & Configuration & Run](#Configuration)
    * [Markup](#markup)
 
