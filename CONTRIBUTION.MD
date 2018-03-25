@@ -22,6 +22,11 @@ To dive deeper into this, let's take a look at the IDescriptionTransformer that 
 ![MarkupDescriptionTreatmentTransformer][MarkupDescriptionTreatmentTransformer]
 
 
+![DescriptionExtractorRun][DescriptionExtractorRun]
+![SomeDescriptionExtractor][SomeDescriptionExtractor]
+![SentenceChunkerRun][SentenceChunkerRun]
+
+
 
 
 [Run]: http://biosemantics.github.io/charaparser/Run.png "Run and Guice Configuration"
